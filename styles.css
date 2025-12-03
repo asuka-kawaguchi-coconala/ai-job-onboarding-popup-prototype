@@ -1,0 +1,341 @@
+/* リセット & ベーススタイル */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f5f5f5;
+}
+
+/* デモコンテンツ */
+.demo-content {
+    max-width: 1200px;
+    margin: 100px auto;
+    padding: 40px;
+    text-align: center;
+}
+
+.demo-content h1 {
+    font-size: 32px;
+    margin-bottom: 16px;
+    color: #1a1a1a;
+}
+
+.demo-content p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 32px;
+}
+
+.demo-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 12px 32px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.demo-button:hover {
+    background-color: #45a049;
+}
+
+/* モーダルオーバーレイ */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* 黒の半透明オーバーレイ（Opacity 50%） */
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    animation: fadeIn 0.3s ease;
+}
+
+.modal-overlay.active {
+    display: flex;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* モーダルコンテンツ */
+.modal-content {
+    background-color: white;
+    border-radius: 16px;
+    max-width: 900px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* 閉じるボタン */
+.close-button {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    color: #666;
+    transition: color 0.2s ease;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+}
+
+.close-button:hover {
+    color: #333;
+    background-color: #f0f0f0;
+}
+
+/* ヘッダー */
+.modal-header {
+    padding: 48px 40px 32px;
+    text-align: center;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.modal-title {
+    font-size: 28px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 12px;
+    line-height: 1.4;
+}
+
+.modal-subtitle {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* ボディ：3ステップ */
+.modal-body {
+    padding: 40px;
+}
+
+.steps-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    align-items: start;
+}
+
+.step-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.step-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.emoji-icon {
+    font-size: 40px;
+}
+
+.step-number {
+    font-size: 12px;
+    font-weight: 600;
+    color: #667eea;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+}
+
+.step-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 12px;
+    line-height: 1.4;
+}
+
+.step-description {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* フッター：CTAボタン */
+.modal-footer {
+    padding: 32px 40px 40px;
+    text-align: center;
+    border-top: 1px solid #e0e0e0;
+}
+
+.cta-button {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    padding: 16px 48px;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+    width: 100%;
+    max-width: 400px;
+}
+
+.cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+.cta-button:active {
+    transform: translateY(0);
+}
+
+/* レスポンシブデザイン：SP版（縦積み） */
+@media (max-width: 768px) {
+    .modal-content {
+        max-width: 100%;
+        margin: 0;
+        border-radius: 16px 16px 0 0;
+        max-height: 95vh;
+    }
+
+    .modal-header {
+        padding: 32px 24px 24px;
+    }
+
+    .modal-title {
+        font-size: 24px;
+    }
+
+    .modal-subtitle {
+        font-size: 14px;
+    }
+
+    .modal-body {
+        padding: 32px 24px;
+    }
+
+    .steps-container {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .step-item {
+        padding: 0;
+    }
+
+    .step-icon {
+        width: 64px;
+        height: 64px;
+    }
+
+    .emoji-icon {
+        font-size: 32px;
+    }
+
+    .step-title {
+        font-size: 18px;
+    }
+
+    .step-description {
+        font-size: 13px;
+    }
+
+    .modal-footer {
+        padding: 24px;
+    }
+
+    .cta-button {
+        padding: 14px 32px;
+        font-size: 16px;
+    }
+
+    .close-button {
+        top: 12px;
+        right: 12px;
+    }
+}
+
+/* タブレットサイズ */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .modal-content {
+        max-width: 700px;
+    }
+
+    .steps-container {
+        gap: 24px;
+    }
+
+    .step-icon {
+        width: 72px;
+        height: 72px;
+    }
+
+    .emoji-icon {
+        font-size: 36px;
+    }
+}
+
+/* スクロールバーのスタイリング */
+.modal-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.modal-content::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 4px;
+}
+
+.modal-content::-webkit-scrollbar-thumb:hover {
+    background: #999;
+}

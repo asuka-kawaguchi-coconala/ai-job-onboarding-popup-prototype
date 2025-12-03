@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI案件作成フロー 初回オンボーディングPOPUP プロトタイプ</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- メインコンテンツ（デモ用） -->
+    <div class="demo-content">
+        <h1>AI案件作成フロー</h1>
+        <p>このページはプロトタイプのデモです。</p>
+        <button id="openModalBtn" class="demo-button">オンボーディングPOPUPを表示</button>
+    </div>
+
+    <!-- モーダルオーバーレイ -->
+    <div id="modalOverlay" class="modal-overlay">
+        <!-- モーダルコンテンツ -->
+        <div class="modal-content">
+            <!-- 閉じるボタン -->
+            <button class="close-button" id="closeModalBtn" aria-label="閉じる">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+
+            <!-- ヘッダー -->
+            <div class="modal-header">
+                <h2 class="modal-title">面倒な入力はAIにおまかせ！</h2>
+                <p class="modal-subtitle">3ステップで、最短3分で募集開始できます。</p>
+            </div>
+
+            <!-- ボディ：3ステップ -->
+            <div class="modal-body">
+                <div class="steps-container">
+                    <!-- Step 1 -->
+                    <div class="step-item">
+                        <div class="step-icon">
+                            <span class="emoji-icon">💬</span>
+                        </div>
+                        <div class="step-number">Step 1</div>
+                        <h3 class="step-title">一言入力するだけ</h3>
+                        <p class="step-description">「ロゴを作りたい」など、思いつきの言葉でOK！</p>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="step-item">
+                        <div class="step-icon">
+                            <span class="emoji-icon">✨</span>
+                        </div>
+                        <div class="step-number">Step 2</div>
+                        <h3 class="step-title">AIがまるっと作成</h3>
+                        <p class="step-description">面倒な要件定義や文章作成はAIが代行します。</p>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="step-item">
+                        <div class="step-icon">
+                            <span class="emoji-icon">⏱️</span>
+                        </div>
+                        <div class="step-number">Step 3</div>
+                        <h3 class="step-title">待つだけで完成</h3>
+                        <p class="step-description">最適な内容に仕上がります。修正も可能です。</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- フッター：CTAボタン -->
+            <div class="modal-footer">
+                <button class="cta-button" id="ctaButton">一言入力してみる</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
